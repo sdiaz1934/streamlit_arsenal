@@ -939,7 +939,7 @@ fig_polar.update_layout(
 )
 
 fig_polar.update_yaxes(automargin=True)
-fig_polar.show()
+# fig_polar.show()
 
 
 # In[30]:
