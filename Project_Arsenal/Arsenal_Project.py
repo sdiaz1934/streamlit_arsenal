@@ -50,7 +50,7 @@ output_notebook()
 pd.set_option('display.max_columns',None)
 pd.set_option('display.max_rows', None)
 
-df=pd.read_csv('C:/Users/Sebastian Arce/Documents/Data Science/streamlit_app/Project_Arsenal/df_full_premierleague.csv')
+df=pd.read_csv('Project_Arsenal/df_full_premierleague.csv')
 # df.head(10)
 
 
