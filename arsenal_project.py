@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore')
 # get_ipython().run_line_magic('matplotlib', 'inline')
 
 import streamlit as sl
-from st_aggrid import AgGrid
+
 
 # Importing python files
 import sys
