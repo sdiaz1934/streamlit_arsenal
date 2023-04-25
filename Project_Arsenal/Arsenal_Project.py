@@ -207,49 +207,49 @@ def season_avg(df, home_field, away_field,name_1,name_2):
 
 
 # Points per season
-points_per_season=season_total(df, 'points_home', 'points_away','Points(home)','Points(away)')
+points_per_season=season_total(df, 'points_home', 'points_away','Points_home','Points_away')
 
 # Goals scored per season
-goals_scored_per_season=season_total(df, 'home_goals', 'away_goals','Goals scored(home)','Goals scored(away)')
+goals_scored_per_season=season_total(df, 'home_goals', 'away_goals','Goals_scored_home','Goals_scored_away')
 
 # Goals conceded per season
-goals_conceded_per_season=season_total(df, 'away_goals', 'home_goals','Goals conceded(home)','Goals conceded(away)')
+goals_conceded_per_season=season_total(df, 'away_goals', 'home_goals','Goals_conceded_home','Goals_conceded_away')
 
 # Passes per season
-passes_per_season=season_total(df, 'home_passes', 'away_passes','Passes(home)','Passes(away)')
+passes_per_season=season_total(df, 'home_passes', 'away_passes','Passes_home','Passes_away')
 
 # Shots per season
-shots_per_season=season_total(df, 'home_shots', 'away_shots','Shots(home)','Shots(away)')
+shots_per_season=season_total(df, 'home_shots', 'away_shots','Shots_home','Shots_away')
 
 # Shots on target per season
 shots_on_target_per_season=season_total(df, 'home_shots_on_target', 'away_shots_on_target',
-                                        'Shots on target(home)','Shots on target(away)')
+                                        'Shots_on_target_home','Shots_on_target_away')
 
 
 # In[9]:
 
 
 # Average points scored per season
-avg_points_per_season=season_avg(df, 'points_home', 'points_away','Avg Points(home)','Avg Points(away)')
+avg_points_per_season=season_avg(df, 'points_home', 'points_away','Avg_Points_home','Avg_Points_away')
 
 # Average goals scored per season
-avg_goals_scored_per_season=season_avg(df, 'home_goals', 'away_goals','Avg Goals scored(home)','Avg Goals scored(away)')
+avg_goals_scored_per_season=season_avg(df, 'home_goals', 'away_goals','Avg_Goals_scored_home','Avg_Goals_scored_away')
 
 # Average goals conceded per season
-avg_goals_conceded_per_season=season_avg(df, 'away_goals','home_goals','Avg Goals conceded(home)','Avg Goals conceded(away)')
+avg_goals_conceded_per_season=season_avg(df, 'away_goals','home_goals','Avg_Goals_conceded_home','Avg_Goals_conceded_away')
 
 # Average Passes per season
-avg_passes_per_season=season_avg(df, 'home_passes', 'away_passes','Avg Passes(home)','Avg Passes(away)')
+avg_passes_per_season=season_avg(df, 'home_passes', 'away_passes','Avg_Passes_home','Avg_Passes_away')
 
 # Average Possession
-possession_per_season=season_avg(df, 'home_possession', 'away_possession','Avg Possession(home)','Avg Possession(away)')
+possession_per_season=season_avg(df, 'home_possession', 'away_possession','Avg_Possession_home','Avg_Possession_away')
 
 # Average Shots per season
-avg_shots_per_season=season_avg(df, 'home_shots', 'away_shots','Avg Shots(home)','Avg Shots(away)')
+avg_shots_per_season=season_avg(df, 'home_shots', 'away_shots','Avg_Shots_home','Avg_Shots_away')
 
 # Average Shots on target per season
 avg_shots_on_target_per_season=season_avg(df, 'home_shots_on_target', 'away_shots_on_target',
-                                          'Avg Shots on target(home)','Avg Shots on target(away)')
+                                          'Avg_Shots_on_target_home','Avg_Shots_on_target_away')
 
 
 # In[10]:
@@ -299,42 +299,42 @@ for ind,row in performance_per_season.iterrows():
 # We will calculate the total of points,goals,passes, average possession, shot, shots on target 
 # and table standing for each team
                          
-performance_per_season['Total_points']=performance_per_season['Points(home)']+performance_per_season['Points(away)']
+performance_per_season['Total_points']=performance_per_season['Points_home']+performance_per_season['Points_away']
 
-performance_per_season['Total_goals_scored']=performance_per_season['Goals scored(home)']+performance_per_season['Goals scored(away)']
+performance_per_season['Total_goals_scored']=performance_per_season['Goals_scored_home']+performance_per_season['Goals_scored_away']
 
-performance_per_season['Total_goals_conceded']=(performance_per_season['Goals conceded(home)']
-                                                +performance_per_season['Goals conceded(away)'])
+performance_per_season['Total_goals_conceded']=(performance_per_season['Goals_conceded_home']
+                                                +performance_per_season['Goals_conceded_away'])
 
 performance_per_season['Diff']=performance_per_season['Total_goals_scored']-performance_per_season['Total_goals_conceded']
 
-performance_per_season['Total_passes']=performance_per_season['Passes(home)']+performance_per_season['Passes(away)']
+performance_per_season['Total_passes']=performance_per_season['Passes_home']+performance_per_season['Passes_away']
 
-performance_per_season['Average_possession']=((performance_per_season['Avg Possession(home)']
-                                              +performance_per_season['Avg Possession(away)'])/2).round(2)
+performance_per_season['Average_possession']=((performance_per_season['Avg_Possession_home']
+                                              +performance_per_season['Avg_Possession_away'])/2).round(2)
 
-performance_per_season['Total_shots']=performance_per_season['Shots(home)']+performance_per_season['Shots(away)']
+performance_per_season['Total_shots']=performance_per_season['Shots_home']+performance_per_season['Shots_away']
 
-performance_per_season['Total_shots_on_target']=(performance_per_season['Shots on target(home)']+
-                                                performance_per_season['Shots on target(away)'])
+performance_per_season['Total_shots_on_target']=(performance_per_season['Shots_on_target_home']+
+                                                performance_per_season['Shots_on_target_away'])
 
-performance_per_season['Avg_points']=(performance_per_season['Avg Points(home)']
-                                     +performance_per_season['Avg Points(away)'])/2
+performance_per_season['Avg_points']=(performance_per_season['Avg_Points_home']
+                                     +performance_per_season['Avg_Points_away'])/2
 
-performance_per_season['Avg_goals_scored']=(performance_per_season['Avg Goals scored(home)']
-                                     +performance_per_season['Avg Goals scored(away)'])/2
+performance_per_season['Avg_goals_scored']=(performance_per_season['Avg_Goals_scored_home']
+                                     +performance_per_season['Avg_Goals_scored_away'])/2
 
-performance_per_season['Avg_goals_conceded']=(performance_per_season['Avg Goals conceded(home)']
-                                     +performance_per_season['Avg Goals conceded(away)'])/2
+performance_per_season['Avg_goals_conceded']=(performance_per_season['Avg_Goals_conceded_home']
+                                     +performance_per_season['Avg_Goals_conceded_away'])/2
 
-performance_per_season['Avg_passes']=(performance_per_season['Avg Passes(home)']
-                                      +performance_per_season['Avg Passes(away)'])/2
+performance_per_season['Avg_passes']=(performance_per_season['Avg_Passes_home']
+                                      +performance_per_season['Avg_Passes_away'])/2
 
-performance_per_season['Avg_shots']=(performance_per_season['Avg Shots(home)']
-                                     +performance_per_season['Avg Shots(away)'])/2
+performance_per_season['Avg_shots']=(performance_per_season['Avg_Shots_home']
+                                     +performance_per_season['Avg_Shots_away'])/2
 
-performance_per_season['Avg_shots_on_target']=(performance_per_season['Avg Shots on target(home)']+
-                                                performance_per_season['Avg Shots on target(away)'])/2
+performance_per_season['Avg_shots_on_target']=(performance_per_season['Avg_Shots_on_target_home']+
+                                                performance_per_season['Avg_Shots_on_target_away'])/2
 
 # Table Standing
 
