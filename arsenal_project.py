@@ -326,7 +326,7 @@ if opt == 'Methodology':
 if opt == 'Analysis and Results':
     with analysis_results:
         sl.header('Analysis and Results')
-        with st.expander('*Performance of the English Premier League’s Teams*'):
+        with st.expander("*Performance of the English Premier League’s Teams*"):
             sl.write("The performance of the best and worst teams is analyzed according to points obtained, goals scored ("
                  "offensive aspect) and goals conceded (defensive aspect).")
             sl.write("\n"
