@@ -299,16 +299,15 @@ if opt == 'Methodology':
                  "ones that qualify for the Champions League, the most important club championship in Europe. The "
                  "best teams are shown in the figure below.")
             sl.markdown("""| Team | City |
-| ----------- | ----------- |
-| Arsenal | London |
-| Chelsea | London |
-| Leicester City | Leicester |
-| Liverpool | Liverpool |
-| Manchester City | Manchester |
-| Manchester United | Manchester |
-| Tottenham Hotspur | London |
-                """)
-            
+                            | ----------- | ----------- |
+                            | Arsenal | London |
+                            | Chelsea | London |
+                            | Leicester City | Leicester |
+                            | Liverpool | Liverpool |
+                            | Manchester City | Manchester |
+                            | Manchester United | Manchester |
+                            | Tottenham Hotspur | London |
+                                            """)
             with sl.expander("*Predictive modeling*"):
                 sl.write(
             "Predictive modeling is a mathematical process used to predict future outcomes by analyzing patterns in a given set of input data. It is a type of data analysis that uses current and historical data to predict activities, behaviors and trends (TechTarget n.d.).")
@@ -338,16 +337,16 @@ if opt == 'Analysis and Results':
                  "the premier league in 14/15. However, apart from this achievement, the team has had a regular "
                  "performance.")
             table_standing = graph_seaborn(filtered_data, 'Season_number', 'Table_standing', 'Table standing by season')
-            with st.expander('Table standing by season'):
-                sl.pyplot(table_standing)
+            
+            sl.pyplot(table_standing)
+            
             sl.write("As shown in the figure below, Manchester city is the team with the best offensive performance (goals "
                  "scored). The rest of the teams show ups and downs. Arsenal's performance in this aspect is a little "
                  "above (excluding Manchester city). However, from 16/17 season onwards, the number of goals scored by "
                  "Arsenal started to decline.")
             goals_scored = graph_seaborn(filtered_data, 'Season_number', 'Total_goals_scored', 'Goal scored by season')
             
-            with sl.expander('Goals scored by season'):
-                sl.pyplot(goals_scored)
+            sl.pyplot(goals_scored)
             
             sl.write(
             "Manchester City is the team with the best defensive performance (goals conceded). Arsenal's performance "
@@ -358,9 +357,7 @@ if opt == 'Analysis and Results':
             "winning enough games to challenge for top spot in the table.")
             goals_conceded = graph_seaborn(filtered_data, 'Season_number', 'Total_goals_conceded',
                                        'Goal conceded by season')
-            
-            with sl.expander('Goals conceded by season'):
-                sl.pyplot(goals_conceded)
+            sl.pyplot(goals_conceded)
             sl.write(
             "An important aspect to evaluate the performance of a football team is the number of points obtained at "
             "the end of each season. Below are shows the English league champions since 2010. It is important to note "
@@ -375,8 +372,8 @@ if opt == 'Analysis and Results':
             arsenal_points = graph_seaborn(filtered_data[filtered_data['Team'] == 'Arsenal'],
                                        'Season_number', 'Total_goals_conceded',
                                        'Points obtained over the last decade by Arsenal')
-            with sl.expander('Points obtained over the last decade by Arsenal'):
-                sl.pyplot(arsenal_points)
+            
+            sl.pyplot(arsenal_points)
             
             sl.write("To compare more concretely the performance of the best teams and the arsenal, a polar chart was "
                  "made. It is used to demonstrate data in two-dimensional for two or more data series. The axes start "
@@ -396,8 +393,7 @@ if opt == 'Analysis and Results':
                  "being below that of other teams. The exception is Leicester City whose performance is below what "
                  "would normally be expected of a champion.")
             
-            with sl.expander('Champions performance vs Arsenal'):
-                sl.plotly_chart(fig_polar, use_container_width=True)
+            sl.plotly_chart(fig_polar, use_container_width=True)
             
         with sl.expander('*Predictive modeling*'):
             sl.write("The first step was to develop the correlation matrix to determine the relationship between the "
@@ -408,8 +404,8 @@ if opt == 'Analysis and Results':
             
             fig_heat, ax_heat = plt.subplots(figsize=(12, 12))
             sns.heatmap(cor_matrix[["winner"]], annot=True, cmap="RdBu_r")
-            with sl.expander('Heatmap'):
-                sl.pyplot(fig_heat)
+            
+            sl.pyplot(fig_heat)
             
             sl.write("The model is trained after standardizing the data and creating the data and target variables."
                  "Then, the scores of each algorithm are evaluated to determine the best one. "
@@ -421,8 +417,7 @@ if opt == 'Analysis and Results':
                                                                      "RandomForestClassifier"],
                                       "Score": [lr_score, knn_score, clf_score]})
             
-            with sl.expander('Score of the predictive models'):
-                inject_CSS_table(df_algorithms)
+            inject_CSS_table(df_algorithms)
                             
             sl.write("The parameters used in the initial analysis were the default parameters provided by Python. To "
                  "obtain better results, the model will be optimized using different parameters. Below are shown the "
