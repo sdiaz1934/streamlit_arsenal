@@ -440,9 +440,9 @@ if opt == 'Analysis and Results':
                  "the letter D indicates that it will be a tie and the letter H indicates that the home team will be "
                  "the winner.")
             
-            sl.table(df_classification_report)
+            sl.dataframe(df_classification_report)
             fig_crosstab = plt.subplots(figsize=(12, 12))
-            stacked_data = cross_tab.stack(level=1)
+            stacked_data = cross_tab.stack(level=2)
             stacked_data.plot.bar()
             sl.pyplot(fig_crosstab)
 
