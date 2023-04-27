@@ -311,16 +311,16 @@ if opt == 'Methodology':
         
         with sl.expander("*Predictive modeling*"):
             sl.write(
-            "Predictive modeling is a mathematical process used to predict future outcomes by analyzing patterns in a given set of input data. It is a type of data analysis that uses current and historical data to predict activities, behaviors and trends (TechTarget n.d.).")
-                sl.write("\n"
+                "Predictive modeling is a mathematical process used to predict future outcomes by analyzing patterns in a given set of input data. It is a type of data analysis that uses current and historical data to predict activities, behaviors and trends (TechTarget n.d.).")
+            sl.write("\n"
                  "For this research report, a predictive model will be developed to determine the winner of a game using information on the offensive and defensive aspects of each team. The problem in question is a classification problem. The developed model must be able to determine if a team is a winner, loser, or was a draw.")
-                sl.write("\n"
+            sl.write("\n"
                  "For this, three machine learning algorithms will be implemented in Python using Scikit-learn. The machines learning algorithms to be trained are LogisticRegression, KNeighborsClassifier and RandomForestClassifier. Then, the objective is to identify the machine learning algorithm that best fits the problem by comparing their performances and selecting the one with the best score.")
-                sl.write("\n"
+            sl.write("\n"
                  "The first step is to create a standardizer because the variables to be considered have different scales. In parallel, a correlation matrix is created to determine the relationship between the different variables. ‘season’,’date’,’home_team’,’away_team’,'home_goals','away_goals','points_home' and 'points_away' will not be considered in the correlation matrix. The information contained in these columns directly determines the winner or loser of a match because they have the final result of the match.")
-                sl.write("\n"
+            sl.write("\n"
                  "Then the ‘data’ and ‘target’ variables are created, which will be used to train the model. The ‘data’ variable contains all the variables discarding those mentioned above and also discarding the winner column. The ‘target’ variable will only consider the information of the winner column.")
-                sl.write("\n"
+            sl.write("\n"
                  "Finally, the model is trained so that it can be used with the algorithms. The variables ‘lr’,’knn’ and ‘clf’ are created, which represent respectively the algorithms LogisticRegression, KNeighborsClassifier and RandomForestClassifier. Now, the score of each algorithm is evaluated and the best one is chosen. This algorithm is optimized to improve its performance in order to obtain better classification results.")
 
 if opt == 'Analysis and Results':
