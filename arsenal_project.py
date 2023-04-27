@@ -72,7 +72,7 @@ sl.markdown("""
 """, unsafe_allow_html=True)
 
 # Creating a sidebar
-opt = sl.sidebar.radio('# Content', options=['Homepage', 'Introduction', 'Objective of the Project',
+opt = sl.sidebar.selectbox('# Content', options=['Homepage', 'Introduction', 'Objective of the Project',
                                              'Methodology', 'Analysis and Results','Interactive graph',
                                              'Conclusions'])
 
