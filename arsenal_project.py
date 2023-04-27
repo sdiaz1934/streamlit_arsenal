@@ -120,11 +120,11 @@ if opt == 'Objective of the Project':
     with homepage:
         sl.image('objectives.jpg', width=300)
         sl.title("Objective of the Project")
-        with st.expander('*Main Objective*'):
+        with st.expander('Main Objective'):
             sl.write("Develop a data storytelling in order to explain how the level of the football club Arsenal FC has "
                  "deteriorated during the last decade.")
         
-        with st.expander('*Specific objectives*'):
+        with st.expander('Specific objectives'):
             sl.write("•	Explore and clean the database to obtain key parameters that help determine the performance of a "
                  "football team.")
             sl.write("\n"
