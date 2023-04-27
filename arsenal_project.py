@@ -299,17 +299,18 @@ if opt == 'Methodology':
                  "ones that qualify for the Champions League, the most important club championship in Europe. The "
                  "best teams are shown in the figure below.")
             sl.markdown("""| Team | City |
-                            | ----------- | ----------- |
-                            | Arsenal | London |
-                            | Chelsea | London |
-                            | Leicester City | Leicester |
-                            | Liverpool | Liverpool |
-                            | Manchester City | Manchester |
-                            | Manchester United | Manchester |
-                            | Tottenham Hotspur | London |
-                                            """)
-            with sl.expander("*Predictive modeling*"):
-                sl.write(
+| ----------- | ----------- |
+| Arsenal | London |
+| Chelsea | London |
+| Leicester City | Leicester |
+| Liverpool | Liverpool |
+| Manchester City | Manchester |
+| Manchester United | Manchester |
+| Tottenham Hotspur | London |
+                """)
+        
+        with sl.expander("*Predictive modeling*"):
+            sl.write(
             "Predictive modeling is a mathematical process used to predict future outcomes by analyzing patterns in a given set of input data. It is a type of data analysis that uses current and historical data to predict activities, behaviors and trends (TechTarget n.d.).")
                 sl.write("\n"
                  "For this research report, a predictive model will be developed to determine the winner of a game using information on the offensive and defensive aspects of each team. The problem in question is a classification problem. The developed model must be able to determine if a team is a winner, loser, or was a draw.")
