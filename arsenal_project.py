@@ -57,19 +57,19 @@ df_deleted = deleted
 # .css-yyj0jg.edgvbvh3
 # css-h5rgaw egzxvld1 Footer
 
-sl.markdown("""
-<style>
+# sl.markdown("""
+# <style>
 
-.css-9s5bis.edgvbvh3
-{
-    visibility:hidden;
-}
-.css-h5rgaw.egzxvld1
-{
-    visibility:hidden;
-}
-</style>
-""", unsafe_allow_html=True)
+# .css-9s5bis.edgvbvh3
+# {
+#     visibility:hidden;
+# }
+# .css-h5rgaw.egzxvld1
+# {
+#     visibility:hidden;
+# }
+# </style>
+# """, unsafe_allow_html=True)
 
 # Creating a sidebar
 opt = sl.sidebar.selectbox('# Content', options=['Homepage', 'Introduction', 'Objective of the Project',
