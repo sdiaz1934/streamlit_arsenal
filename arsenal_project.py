@@ -440,11 +440,8 @@ if opt == 'Analysis and Results':
                  "the letter D indicates that it will be a tie and the letter H indicates that the home team will be "
                  "the winner.")
             
-            sl.dataframe(df_classification_report)
-            fig_crosstab = plt.subplots(figsize=(12, 12))
-            stacked_data = cross_tab.stack(level=2)
-            stacked_data.plot.bar()
-            sl.pyplot(fig_crosstab)
+            sl.dataframe(df_classification_report.transpose())
+
 
 if opt=='Interactive graph':
     with interactive_graph:
@@ -501,52 +498,3 @@ if opt == "Conclusions":
                  "i.e. it correctly assigned the class about 86% of the time. Class 'D' representing tie was the class "
                  "with the least accuracy. The model used 226 data, of which it predicted 35. It correctly assigned the"
                  "class about 15% of the time.")
-
-# Brief description
-#
-# sl.write('This project is based on the performance of Arsenal FC over the last decade. '
-#           'Specifically, this project analyze the data from the Premier League matches over the last decade '
-#           'to tell how has been the performance of Arsenal.')
-
-# sl.latex(r"\begin{pmatrix}\\a&b\\c&d\end{pmatrix}")
-
-# sl.table(df.head(5)) #shows as a static table
-
-# sl.dataframe(df.head(5))  # shows interactive table
-#
-# x = np.linspace(0, 10, 100)
-
-# fig, ax = plt.subplots(figsize=(12,12))
-# sns.lineplot(data=filtered_data, x='Season_number',y='Table_standing',hue='Team')
-# sns.set(rc={"figure.figsize":(10, 10)}) #width=5, #height=6
-#
-# #specfiy axis labels
-# ax.set(xlabel='Season',
-#        ylabel='Table Standing',
-#        title='Table standing by season',
-#        ylim=(0,15)) #width=5, #height=6
-#
-# # Changing tick labels
-#
-# ax.set_xticks(range(len(seasons))) # <--- set the ticks first
-# ax.set_xticklabels(['10/11','11/12','12/13','13/14','14/15',
-#                    '15/16','16/17','17/18','18/19','19/20'])
-#
-# ax.invert_yaxis()
-# plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
-#
-# # Rectangule
-# left, bottom, width, height = (0, 1, 9, 3)
-# rect=mpatches.Rectangle((left,bottom),width,height,
-# #                         fill=True,
-#                         alpha=0.1,
-#                        facecolor="red")
-# plt.gca().add_patch(rect)
-#
-# sl.pyplot(fig)
-
-# seaborn_grpah=graph_seaborn(filtered_data,'Season_number','Table_standing')
-#
-# sl.pyplot(seaborn_grpah)
-#
-# points_per=graph_lines(data=performance_per_season,variable='Total_points')
