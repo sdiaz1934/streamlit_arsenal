@@ -57,19 +57,19 @@ df_deleted = deleted
 # .css-yyj0jg.edgvbvh3
 # css-h5rgaw egzxvld1 Footer
 
-# sl.markdown("""
-# <style>
+sl.markdown("""
+<style>
 
-# .css-9s5bis.edgvbvh3
-# {
-#     visibility:hidden;
-# }
-# .css-h5rgaw.egzxvld1
-# {
-#     visibility:hidden;
-# }
-# </style>
-# """, unsafe_allow_html=True)
+.css-9s5bis.edgvbvh3
+{
+    visibility:hidden;
+}
+.css-h5rgaw.egzxvld1
+{
+    visibility:hidden;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # Creating a sidebar
 opt = sl.sidebar.selectbox('# Content', options=['Homepage', 'Introduction', 'Objective of the Project',
@@ -97,8 +97,8 @@ if opt == 'Homepage' or opt is None:
 if opt == 'Introduction':
     with introduction:
         sl.title("Introduction")
-        with st.expander('*Description of Arsenal FC*'):
-            sl.subheader('*Description of Arsenal FC*')
+        with sl.expander('*Description of Arsenal FC*'):
+            
             sl.write("Arsenal Football Club is an English professional soccer club based in London and plays in the "
                  "Premier League, the top tier of English soccer."
                  "The club has won 13 league titles, a record 14 FA Cups, two League Cups, 16 FA Community Shields, "
@@ -110,7 +110,7 @@ if opt == 'Introduction':
                  "the last time Arsenal was champion of the Premier League was in the 2003/2004 season."
                  )
             
-        with st.expander('*Description of the database*'):
+        with sl.expander('*Description of the database*'):
             sl.write("The database to be used has been obtained from the Kaggle website. This database has important "
                  "statistics of Premier League matches from 2010 to mid-2021 (Kaggle 2021). Similarly, this data is "
                  "available for free on the English Premier League website and allows tracking of the last few "
@@ -120,11 +120,11 @@ if opt == 'Objective of the Project':
     with homepage:
         sl.image('objectives.jpg', width=300)
         sl.title("Objective of the Project")
-        with st.expander('Main Objective'):
+        with sl.expander('*Main Objective*'):
             sl.write("Develop a data storytelling in order to explain how the level of the football club Arsenal FC has "
                  "deteriorated during the last decade.")
         
-        with st.expander('Specific objectives'):
+        with sl.expander('Specific objectives'):
             sl.write("•	Explore and clean the database to obtain key parameters that help determine the performance of a "
                  "football team.")
             sl.write("\n"
@@ -141,7 +141,7 @@ if opt == 'Objective of the Project':
 if opt == 'Methodology':
     with methodology:
         sl.title("Methodology")
-        with st.expander('*Importing libraries and database*'):
+        with sl.expander('*Importing libraries and database*'):
             code_modules = ("""
                 import warnings
                 from IPython import get_ipython
@@ -186,7 +186,7 @@ if opt == 'Methodology':
                  "**114"
                  "columns (variables)**.")
             sl.dataframe(original_df.head())
-        with st.expander('*Removing unnecessary information*'):
+        with sl.expander('*Removing unnecessary information*'):
             sl.write(r"The database has a large number of variables, which contain important information on every game "
                  r"played since 2010. However, it is necessary to reduce this number in order to perform an adequate "
                  r"analysis of the teams' performance.")
@@ -210,7 +210,7 @@ if opt == 'Methodology':
                  "most goals at the end of the match gets 3 points and is the winner. Both teams get 1 point if they "
                  "scored the same number of goals. The team with fewer goals scored gets 0 points and is the loser.")
 
-        with st.expander('*Identifying and/or deleting duplicate values and NaN management*'):
+        with sl.expander('*Identifying and/or deleting duplicate values and NaN management*'):
             sl.write("Datasets that contain duplicates and missing values may contaminate the training data with the test "
                  "data or vice versa as well as lead to wrong interpretation of the different variables. A good way "
                  "to get a quick feel for the data is to take a look at the information of the DataFrame. As shown on "
@@ -225,7 +225,7 @@ if opt == 'Methodology':
                  "If the sum is greater than 0 it means that duplicates have been found. For this specific database "
                  "no duplicate values were found.")
 
-        with st.expander('*Adjusting the data*'):
+        with sl.expander('*Adjusting the data*'):
             sl.write("For the elaboration of the graphs a new dataframe will be created. This dataframe will contain the "
                  "statistics per season from 2010 to 2020. The 2021 season will not be considered because the "
                  "available data only has information up to the middle of the season. This is done in order to have "
@@ -309,7 +309,7 @@ if opt == 'Methodology':
 | Tottenham Hotspur | London |
                 """)
             
-            with st.expander("*Predictive modeling*"):
+            with sl.expander("*Predictive modeling*"):
                 sl.write(
             "Predictive modeling is a mathematical process used to predict future outcomes by analyzing patterns in a given set of input data. It is a type of data analysis that uses current and historical data to predict activities, behaviors and trends (TechTarget n.d.).")
                 sl.write("\n"
@@ -326,7 +326,7 @@ if opt == 'Methodology':
 if opt == 'Analysis and Results':
     with analysis_results:
         sl.header('Analysis and Results')
-        with st.expander("*Performance of the English Premier League’s Teams*"):
+        with sl.expander("*Performance of the English Premier League’s Teams*"):
             sl.write("The performance of the best and worst teams is analyzed according to points obtained, goals scored ("
                  "offensive aspect) and goals conceded (defensive aspect).")
             sl.write("\n"
@@ -346,7 +346,7 @@ if opt == 'Analysis and Results':
                  "Arsenal started to decline.")
             goals_scored = graph_seaborn(filtered_data, 'Season_number', 'Total_goals_scored', 'Goal scored by season')
             
-            with st.expander('Goals scored by season'):
+            with sl.expander('Goals scored by season'):
                 sl.pyplot(goals_scored)
             
             sl.write(
@@ -359,7 +359,7 @@ if opt == 'Analysis and Results':
             goals_conceded = graph_seaborn(filtered_data, 'Season_number', 'Total_goals_conceded',
                                        'Goal conceded by season')
             
-            with st.expander('Goals conceded by season'):
+            with sl.expander('Goals conceded by season'):
                 sl.pyplot(goals_conceded)
             sl.write(
             "An important aspect to evaluate the performance of a football team is the number of points obtained at "
@@ -375,7 +375,7 @@ if opt == 'Analysis and Results':
             arsenal_points = graph_seaborn(filtered_data[filtered_data['Team'] == 'Arsenal'],
                                        'Season_number', 'Total_goals_conceded',
                                        'Points obtained over the last decade by Arsenal')
-            with st.expander('Points obtained over the last decade by Arsenal'):
+            with sl.expander('Points obtained over the last decade by Arsenal'):
                 sl.pyplot(arsenal_points)
             
             sl.write("To compare more concretely the performance of the best teams and the arsenal, a polar chart was "
@@ -396,10 +396,10 @@ if opt == 'Analysis and Results':
                  "being below that of other teams. The exception is Leicester City whose performance is below what "
                  "would normally be expected of a champion.")
             
-            with st.expander('Champions performance vs Arsenal'):
+            with sl.expander('Champions performance vs Arsenal'):
                 sl.plotly_chart(fig_polar, use_container_width=True)
             
-        with st.expander('*Predictive modeling*'):
+        with sl.expander('*Predictive modeling*'):
             sl.write("The first step was to develop the correlation matrix to determine the relationship between the "
                  "variables. As shown in the figure below, the variables most closely related to the winner of a "
                  "match are: 'home_clearances','home_passes','home_possession','home_red_cards','home_shots',"
@@ -408,7 +408,7 @@ if opt == 'Analysis and Results':
             
             fig_heat, ax_heat = plt.subplots(figsize=(12, 12))
             sns.heatmap(cor_matrix[["winner"]], annot=True, cmap="RdBu_r")
-            with st.expander('Heatmap'):
+            with sl.expander('Heatmap'):
                 sl.pyplot(fig_heat)
             
             sl.write("The model is trained after standardizing the data and creating the data and target variables."
@@ -421,7 +421,7 @@ if opt == 'Analysis and Results':
                                                                      "RandomForestClassifier"],
                                       "Score": [lr_score, knn_score, clf_score]})
             
-            with st.expander('Score of the predictive models'):
+            with sl.expander('Score of the predictive models'):
                 inject_CSS_table(df_algorithms)
                             
             sl.write("The parameters used in the initial analysis were the default parameters provided by Python. To "
